@@ -1,185 +1,1276 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuroanesthesiology Rotation Guide | UC Davis Health</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ucd-gold': '#DAAA00',
-                        'ucd-blue': '#022851',
-                        'ucd-teal': '#0D7377',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #022851 0%, #0D7377 50%, #022851 100%);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        .download-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(218, 170, 0, 0.3);
-        }
-        
-        .pulse-ring {
-            animation: pulse-ring 2s ease-out infinite;
-        }
-        
-        @keyframes pulse-ring {
-            0% {
-                transform: scale(0.9);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.3);
-                opacity: 0;
-            }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+    theme: {
+    extend: {
+    colors: {
+    'ucd-gold': '#DAAA00',
+    'ucd-blue': '#022851',
+    'ucd-teal': '#0D7377',
+},
+    fontFamily: {
+    'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+}
+}
+}
+}
+</script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
 </head>
-<body class="min-h-screen gradient-bg flex items-center justify-center p-6">
-    
-    <div class="glass-card rounded-2xl shadow-2xl max-w-lg w-full p-8 md:p-12 fade-in">
-        
-        <!-- Header -->
-        <div class="text-center mb-8">
-            <div class="inline-flex items-center gap-2 text-ucd-gold font-semibold text-sm tracking-wide mb-4">
-                <span class="w-8 h-px bg-ucd-gold"></span>
-                UC DAVIS HEALTH
-                <span class="w-8 h-px bg-ucd-gold"></span>
-            </div>
-            <h1 class="text-2xl md:text-3xl font-bold text-ucd-blue leading-tight">
-                Neuroanesthesiology<br>Rotation Guide
-            </h1>
-            <p class="text-gray-500 mt-3 text-sm">
-                Department of Anesthesiology & Pain Medicine
-            </p>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased">
+
+<!-- Mobile Header -->
+<header class="lg:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 z-40 flex items-center px-4">
+    <button id="mobileMenuBtn" class="p-2 -ml-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+    </button>
+    <span class="ml-3 font-semibold text-ucd-blue">Neuro Rotation Guide</span>
+</header>
+
+<!-- Sidebar Overlay -->
+<div id="sidebarOverlay" class="sidebar-overlay fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed top-0 left-0 h-screen w-80 bg-white border-r border-slate-200 z-50 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+
+    <!-- Sidebar Header -->
+    <div class="p-5 bg-gradient-to-br from-ucd-blue to-ucd-teal">
+        <button id="closeSidebarBtn" class="lg:hidden absolute top-4 right-4 p-1 text-white/70 hover:text-white rounded">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="flex items-center gap-2 mb-2">
+            <svg class="w-7 h-7 text-ucd-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span class="text-xs font-semibold text-ucd-gold tracking-wide">UC DAVIS HEALTH</span>
         </div>
-        
-        <!-- Document Info -->
-        <div class="bg-gray-50 rounded-xl p-5 mb-8">
-            <div class="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                    <span class="text-gray-400 block">Version</span>
-                    <span class="text-gray-700 font-medium">3.0</span>
-                </div>
-                <div>
-                    <span class="text-gray-400 block">Updated</span>
-                    <span class="text-gray-700 font-medium">May 2025</span>
-                </div>
-                <div>
-                    <span class="text-gray-400 block">Format</span>
-                    <span class="text-gray-700 font-medium">PDF Document</span>
-                </div>
-                <div>
-                    <span class="text-gray-400 block">Pages</span>
-                    <span class="text-gray-700 font-medium">64</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Download Button -->
-        <div class="relative flex justify-center mb-8">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-16 h-16 rounded-full bg-ucd-gold/20 pulse-ring"></div>
-            </div>
-            <a href="Neuroansesthesiology_Rotation_Guide_v3.pdf" 
-               download="UC_Davis_Neuroanesthesiology_Rotation_Guide_v3.pdf"
-               id="downloadBtn"
-               class="download-btn relative inline-flex items-center gap-3 bg-ucd-gold text-ucd-blue font-semibold px-8 py-4 rounded-xl shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Download PDF
-            </a>
-        </div>
-        
-        <!-- Contents Preview -->
-        <div class="border-t border-gray-100 pt-6">
-            <p class="text-xs text-gray-400 uppercase tracking-wide mb-3 font-medium">Contents Include</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-ucd-blue/5 text-ucd-blue px-3 py-1.5 rounded-full">Craniotomy</span>
-                <span class="text-xs bg-ucd-blue/5 text-ucd-blue px-3 py-1.5 rounded-full">DBS</span>
-                <span class="text-xs bg-ucd-blue/5 text-ucd-blue px-3 py-1.5 rounded-full">Spine Surgery</span>
-                <span class="text-xs bg-ucd-blue/5 text-ucd-blue px-3 py-1.5 rounded-full">TBI Management</span>
-                <span class="text-xs bg-ucd-blue/5 text-ucd-blue px-3 py-1.5 rounded-full">ERAS Protocol</span>
-                <span class="text-xs bg-ucd-blue/5 text-ucd-blue px-3 py-1.5 rounded-full">Neuromonitoring</span>
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <p class="text-center text-gray-300 text-xs mt-8">
-            Editor: Brian Pitts, M.D.
-        </p>
+        <h1 class="text-lg font-bold text-white leading-tight">Neuroanesthesiology Rotation Guide</h1>
+        <p class="text-xs text-white/70 mt-1">Version 3.0 · May 2025</p>
     </div>
-    
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function(e) {
-            const btn = this;
-            const originalText = btn.innerHTML;
-            
-            btn.innerHTML = `
-                <svg class="w-5 h-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Downloading...
-            `;
-            
-            setTimeout(() => {
-                btn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+
+    <!-- Search -->
+    <div class="p-4 border-b border-slate-200">
+        <div class="relative">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search guide... (⌘K)"
+                class="w-full pl-10 pr-10 py-2.5 bg-slate-100 border border-transparent rounded-lg text-sm placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-ucd-teal focus:ring-2 focus:ring-ucd-teal/20 transition-all"
+            >
+                <button id="searchClear" class="hidden absolute right-2 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 rounded">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
-                    Downloaded!
-                `;
-                btn.classList.add('bg-green-500');
-                btn.classList.remove('bg-ucd-gold');
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('bg-green-500');
-                    btn.classList.add('bg-ucd-gold');
-                }, 2000);
-            }, 1000);
-        });
-    </script>
+                </button>
+        </div>
+        <p id="searchResults" class="hidden text-xs text-slate-500 mt-2"></p>
+    </div>
+
+    <!-- TOC Navigation -->
+    <nav class="flex-1 overflow-y-auto py-4">
+        <!-- Part I -->
+        <div class="mb-2">
+            <p class="px-5 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Part I: Core Concepts</p>
+            <a data-target="introduction" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">1. Introduction</a>
+            <a data-target="competencies" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">2. Competency Framework</a>
+            <a data-target="neurophysiology" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">3. Neurophysiology</a>
+            <a data-target="neuromonitoring" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">4. Neuromonitoring Principles</a>
+        </div>
+
+        <!-- Part II -->
+        <div class="mb-2">
+            <p class="px-5 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Part II: Cranial Procedures</p>
+            <a data-target="asleep-craniotomy" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">5. Asleep Craniotomy</a>
+            <a data-target="awake-craniotomy" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">6. Awake Craniotomy</a>
+            <a data-target="pituitary" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">7. Transsphenoidal Pituitary</a>
+            <a data-target="litt" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">8. LITT (NeuroBlate)</a>
+        </div>
+
+        <!-- Part III -->
+        <div class="mb-2">
+            <p class="px-5 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Part III: Functional & Epilepsy</p>
+            <a data-target="dbs" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">9. Deep Brain Stimulation</a>
+            <a data-target="rns" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">10. RNS System</a>
+            <a data-target="vns" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">11. VNS Implantation</a>
+            <a data-target="cortical-mapping" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">12. IEA & Cortical Mapping</a>
+        </div>
+
+        <!-- Part IV -->
+        <div class="mb-2">
+            <p class="px-5 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Part IV: Spine Procedures</p>
+            <a data-target="complex-spine" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">13. Complex Spine Surgery</a>
+            <a data-target="spine-eras" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">14. Spine ERAS Protocol</a>
+        </div>
+
+        <!-- Part V -->
+        <div class="mb-2">
+            <p class="px-5 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Part V: Special Considerations</p>
+            <a data-target="tbi" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">15. TBI Management</a>
+            <a data-target="transport-mri" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">16. Transport & MRI</a>
+        </div>
+
+        <!-- Appendices -->
+        <div class="mb-2">
+            <p class="px-5 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Appendices</p>
+            <a data-target="appendices" class="toc-item block px-5 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-3 border-l-transparent cursor-pointer">Quick Reference</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="p-4 border-t border-slate-200 bg-slate-50">
+        <a href="Neuroansesthesiology_Rotation_Guide_v3.pdf" download class="flex items-center justify-center gap-2 w-full py-3 bg-ucd-gold hover:bg-yellow-500 text-ucd-blue font-semibold rounded-lg transition-all hover:shadow-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download PDF
+        </a>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="lg:ml-80 min-h-screen pt-16 lg:pt-0">
+
+    <!-- Sticky Header -->
+    <header class="hidden lg:flex sticky top-0 h-16 bg-white/90 backdrop-blur-sm border-b border-slate-200 z-30 items-center justify-between px-8">
+        <div class="flex items-center gap-2 text-sm">
+            <span class="text-slate-400">Guide</span>
+            <svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+            </svg>
+            <span id="currentSection" class="text-slate-700 font-medium">Introduction</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="printGuide()" class="flex items-center gap-2 px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                Print
+            </button>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-8 lg:py-12">
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">1</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Introduction and Rotation Overview</h2>
+                    <p class="text-slate-500 text-sm mt-1">Welcome to your neuroanesthesiology rotation</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-ucd-blue to-ucd-teal rounded-2xl p-8 text-white mb-8">
+                <h3 class="text-xl font-semibold mb-3">Welcome</h3>
+                <p class="text-white/90 leading-relaxed">Welcome to your neuroanesthesiology rotation! This is your time to grow and take ownership of your learning. We can't do it for you, but we're here to support, guide, and cheer you on. We're glad to be part of your journey.</p>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Rotation Structure</h3>
+            <p class="text-slate-600 mb-4">The neuroanesthesiology rotation consists of four weeks dedicated to the perioperative care of neurosurgical patients. You will:</p>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Participate in 3-4 neurosurgical cases per week
+                </li>
+                <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Attend weekly neurosurgical conference
+                </li>
+                <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Complete one academic project related to neuroanesthesia
+                </li>
+                <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Maintain a case log with reflections
+                </li>
+                <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Receive mid-rotation and end-rotation feedback
+                </li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Learning Environment</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-ucd-teal/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-ucd-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Progressive Responsibility</h4>
+                    <p class="text-sm text-slate-500">Starting with simple cases and advancing to complex ones</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-ucd-teal/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-ucd-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Direct Supervision</h4>
+                    <p class="text-sm text-slate-500">Faculty available for all cases</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-ucd-teal/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-ucd-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Deliberate Practice</h4>
+                    <p class="text-sm text-slate-500">Focused skill development</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-ucd-teal/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-ucd-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Cognitive Apprenticeship</h4>
+                    <p class="text-sm text-slate-500">Think aloud with your attending</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-amber-800 text-sm">Resident Action</p>
+                        <p class="text-amber-700 text-sm mt-1">Review your assigned cases 24 hours in advance and prepare focused prereading for each procedure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competencies Section -->
+        <section id="competencies" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">2</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Competency Framework</h2>
+                    <p class="text-slate-500 text-sm mt-1">ACGME and ABA expectations across six domains</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Patient Care -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold text-ucd-blue mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 bg-ucd-blue/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-ucd-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                            </span>
+                        Patient Care
+                    </h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>• Conduct comprehensive preoperative evaluations with focused neurologic assessment</li>
+                        <li>• Formulate and execute anesthetic plans for patients with neurological disease</li>
+                        <li>• Manage anesthesia for a spectrum of neurosurgical procedures</li>
+                        <li>• Interpret intraoperative neuromonitoring and adjust management accordingly</li>
+                        <li>• Perform detailed postoperative assessments</li>
+                    </ul>
+                </div>
+
+                <!-- Medical Knowledge -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold text-ucd-blue mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 bg-ucd-blue/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-ucd-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            </span>
+                        Medical Knowledge
+                    </h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>• Explain core neuroanatomy, neurophysiology, neuropharmacology, and neuroprotection principles</li>
+                        <li>• Describe the pathophysiology of common neurosurgical disorders</li>
+                        <li>• Anticipate and manage neurosurgery-specific perioperative complications</li>
+                        <li>• Correlate anesthetic agents with effects on CBF, metabolism, ICP, and evoked potentials</li>
+                    </ul>
+                </div>
+
+                <!-- Other Competencies Summary -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-semibold text-slate-800 mb-2">Practice-Based Learning</h4>
+                        <p class="text-sm text-slate-500">Integrate evidence and reflective practice to enhance outcomes</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-semibold text-slate-800 mb-2">Communication Skills</h4>
+                        <p class="text-sm text-slate-500">Deliver concise handoffs and lead communication during critical events</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-semibold text-slate-800 mb-2">Professionalism</h4>
+                        <p class="text-sm text-slate-500">Demonstrate respect, compassion, and integrity in all interactions</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-semibold text-slate-800 mb-2">Systems-Based Practice</h4>
+                        <p class="text-sm text-slate-500">Navigate resources to provide high-value, cost-effective care</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neurophysiology Section -->
+        <section id="neurophysiology" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">3</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Fundamentals of Neurophysiology</h2>
+                    <p class="text-slate-500 text-sm mt-1">CBF regulation and anesthetic effects on the brain</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Cerebral Blood Flow (CBF) Regulation</h3>
+            <p class="text-slate-600 mb-4">CBF is regulated by:</p>
+            <div class="grid sm:grid-cols-3 gap-4 mb-8">
+                <div class="bg-white border border-slate-200 rounded-xl p-5 text-center">
+                    <div class="w-12 h-12 bg-ucd-teal/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-ucd-teal font-bold">P</span>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Pressure Autoregulation</h4>
+                    <p class="text-sm text-slate-500">Maintains constant CBF between MAP 50-150 mmHg</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5 text-center">
+                    <div class="w-12 h-12 bg-ucd-teal/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-ucd-teal font-bold">C</span>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Chemical Regulation</h4>
+                    <p class="text-sm text-slate-500">PaCO₂ (strongest factor), PaO₂, pH</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5 text-center">
+                    <div class="w-12 h-12 bg-ucd-teal/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-ucd-teal font-bold">M</span>
+                    </div>
+                    <h4 class="font-semibold text-slate-800 mb-1">Metabolic Coupling</h4>
+                    <p class="text-sm text-slate-500">CBF increases with cerebral metabolic rate (CMRO₂)</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Anesthetic Effects on Brain</h3>
+            <div class="overflow-x-auto border border-slate-200 rounded-xl mb-6">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Agent</th>
+                        <th class="px-4 py-3 text-center font-semibold text-slate-700">CBF</th>
+                        <th class="px-4 py-3 text-center font-semibold text-slate-700">CMRO₂</th>
+                        <th class="px-4 py-3 text-center font-semibold text-slate-700">ICP</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Autoregulation</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-4 py-3 font-medium text-slate-800">Propofol</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓↓</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓↓↓</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓↓</td>
+                        <td class="px-4 py-3 text-green-600">Preserved</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-4 py-3 font-medium text-slate-800">Volatile Agents</td>
+                        <td class="px-4 py-3 text-center text-blue-600">↑↑</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓↓</td>
+                        <td class="px-4 py-3 text-center text-blue-600">↑</td>
+                        <td class="px-4 py-3 text-amber-600">Impaired</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-4 py-3 font-medium text-slate-800">Ketamine</td>
+                        <td class="px-4 py-3 text-center text-blue-600">↑↑</td>
+                        <td class="px-4 py-3 text-center text-blue-600">↑</td>
+                        <td class="px-4 py-3 text-center text-blue-600">↑</td>
+                        <td class="px-4 py-3 text-slate-500">Variable</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-4 py-3 font-medium text-slate-800">Dexmedetomidine</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓</td>
+                        <td class="px-4 py-3 text-green-600">Preserved</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-4 py-3 font-medium text-slate-800">Opioids</td>
+                        <td class="px-4 py-3 text-center text-slate-400">nc</td>
+                        <td class="px-4 py-3 text-center text-red-600">↓</td>
+                        <td class="px-4 py-3 text-center text-slate-400">nc</td>
+                        <td class="px-4 py-3 text-green-600">Preserved</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- VAPID Mnemonic -->
+            <div class="bg-gradient-to-br from-ucd-blue to-ucd-teal rounded-xl p-6 text-white mb-6">
+                <p class="text-xs font-semibold uppercase tracking-wider text-white/70 mb-2">Mnemonic</p>
+                <p class="text-2xl font-bold mb-4">"VAPID"</p>
+                <ul class="space-y-2 text-white/90 text-sm">
+                    <li><span class="font-bold">V</span>olatile agents: ↑CBF, ↓CMRO₂</li>
+                    <li><span class="font-bold">A</span>nesthetics (IV: propofol, thiopental): ↓CBF, ↓CMRO₂, ↓ICP</li>
+                    <li><span class="font-bold">P</span>rotection: Burst suppression on EEG (barbs, propofol)</li>
+                    <li><span class="font-bold">I</span>ncreased ICP: Ketamine caution</li>
+                    <li><span class="font-bold">D</span>epress neuromonitoring: Volatile agents</li>
+                </ul>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Brain Protection Strategies</h3>
+            <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Maintaining adequate cerebral perfusion pressure (CPP)
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Avoiding hyperthermia
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Glucose control (avoid both hyper- and hypoglycemia)
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Reducing metabolic demand (mild hypothermia, anesthetic depth)
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Optimizing oxygenation and managing seizure risk
+                </li>
+            </ul>
+        </section>
+
+        <!-- Neuromonitoring Section -->
+        <section id="neuromonitoring" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">4</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Neuromonitoring Principles</h2>
+                    <p class="text-slate-500 text-sm mt-1">Common modalities and anesthetic considerations</p>
+                </div>
+            </div>
+
+            <div class="grid gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">SSEPs (Somatosensory Evoked Potentials)</h4>
+                    <p class="text-sm text-slate-500 mb-2">Pathway: Peripheral nerve → dorsal column → thalamus → sensory cortex</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Moderate anesthetic sensitivity</span>
+                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Spine & vascular cases</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">MEPs (Motor Evoked Potentials)</h4>
+                    <p class="text-sm text-slate-500 mb-2">Pathway: Motor cortex → corticospinal tract → alpha motor neurons → muscle</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">High anesthetic sensitivity</span>
+                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Avoid NMB</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">EMG (Electromyography)</h4>
+                    <p class="text-sm text-slate-500 mb-2">Free-running and triggered types for nerve root monitoring</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Affected by NMB</span>
+                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Spine surgery</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">EEG / ECoG / MER</h4>
+                    <p class="text-sm text-slate-500 mb-2">EEG: Depth of anesthesia, seizure detection. ECoG: Direct cortical activity. MER: Single neuron activity for DBS.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">MER: Extremely high sensitivity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-teal-50 border-l-4 border-teal-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-teal-800 text-sm">Key Point</p>
+                        <p class="text-teal-700 text-sm mt-1"><strong>TIVA Advantages:</strong> Propofol-based TIVA provides stable neuromonitoring conditions. Generally avoid neuromuscular blockade during MEP and EMG monitoring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-amber-800 text-sm">Resident Action</p>
+                        <p class="text-amber-700 text-sm mt-1">Before each case, confirm with the neuromonitoring team which modalities will be used and adjust your anesthetic plan accordingly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asleep Craniotomy Section -->
+        <section id="asleep-craniotomy" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">5</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Asleep Craniotomy</h2>
+                    <p class="text-slate-500 text-sm mt-1">Tumor resection, vascular malformations, abscess drainage</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Preoperative Assessment</h3>
+            <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Neurological Evaluation</h4>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li>• Review clinic notes for deficits</li>
+                        <li>• Document baseline function</li>
+                        <li>• Assess seizure history</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Laboratory Testing</h4>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li>• CBC, BMP, coags</li>
+                        <li>• Type and screen</li>
+                        <li>• Anticonvulsant levels</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Special Considerations</h4>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li>• Glucose if diabetic/steroids</li>
+                        <li>• Target 70-180 mg/dL</li>
+                        <li>• Cardiopulmonary reserve</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Anesthetic Technique</h3>
+            <div class="bg-white border border-slate-200 rounded-xl p-5 mb-4">
+                <h4 class="font-semibold text-slate-800 mb-3">Induction & Airway</h4>
+                <ul class="text-sm text-slate-600 space-y-2">
+                    <li>• Two large-bore IVs (≥18G)</li>
+                    <li>• Consider arterial line before induction</li>
+                    <li>• Video laryngoscopy for high ICP risk</li>
+                    <li>• Secure ETT with tape (avoid ties obstructing venous drainage)</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-xl p-5 mb-4">
+                <h4 class="font-semibold text-slate-800 mb-3">TIVA Maintenance (preferred for neuromonitoring)</h4>
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="text-center p-3 bg-slate-50 rounded-lg">
+                        <p class="text-xs text-slate-400 mb-1">Propofol</p>
+                        <p class="font-semibold text-slate-800">75-150 mcg/kg/min</p>
+                    </div>
+                    <div class="text-center p-3 bg-slate-50 rounded-lg">
+                        <p class="text-xs text-slate-400 mb-1">Remifentanil</p>
+                        <p class="font-semibold text-slate-800">0.05-0.2 mcg/kg/min</p>
+                    </div>
+                    <div class="text-center p-3 bg-slate-50 rounded-lg">
+                        <p class="text-xs text-slate-400 mb-1">Dexmedetomidine</p>
+                        <p class="font-semibold text-slate-800">0.3-0.7 mcg/kg/hr</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-teal-50 border-l-4 border-teal-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-teal-800 text-sm">Resident Tip</p>
+                        <p class="text-teal-700 text-sm mt-1">Anticipate hypertensive response with Mayfield pin placement. Have remifentanil bolus (0.5-1 mcg/kg) drawn up and ready.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Intraoperative Management</h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">ICP Management</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Normocapnia (PaCO₂ 35-40 mmHg)</li>
+                        <li>• Gentle hyperventilation only for acute crisis</li>
+                        <li>• Mannitol 0.25-1 g/kg if requested</li>
+                        <li>• Adequate depth before dural opening</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">Hemodynamic Goals</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• SBP 100-140 mmHg</li>
+                        <li>• Use phenylephrine or norepinephrine</li>
+                        <li>• Ensure adequate venous drainage</li>
+                        <li>• Avoid extreme neck rotation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 text-white rounded-xl p-6">
+                <h4 class="font-semibold mb-3">Key Learning Points</h4>
+                <ol class="text-sm space-y-2 text-slate-300">
+                    <li>1. ICP management combines positioning, ventilation control, and osmotic therapy</li>
+                    <li>2. Hemodynamic control must balance perfusion against bleeding risk</li>
+                    <li>3. Smooth emergence prevents dangerous ICP spikes</li>
+                    <li>4. Early recognition of postoperative complications is critical</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Awake Craniotomy Section -->
+        <section id="awake-craniotomy" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">6</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Awake Craniotomy</h2>
+                    <p class="text-slate-500 text-sm mt-1">Mapping eloquent cortex during tumor resection or epilepsy surgery</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-100 rounded-xl p-6 mb-6">
+                <h3 class="text-lg font-semibold text-purple-900 mb-3">Sedated-Awake-Sedated (SAS) Technique</h3>
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">1</div>
+                        <h4 class="font-medium text-purple-900 text-sm">Initial Sedation</h4>
+                        <p class="text-xs text-purple-700 mt-1">Propofol + remifentanil for positioning, head fixation, craniotomy</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">2</div>
+                        <h4 class="font-medium text-purple-900 text-sm">Awake Phase</h4>
+                        <p class="text-xs text-purple-700 mt-1">Minimal/no sedation during cortical mapping</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">3</div>
+                        <h4 class="font-medium text-purple-900 text-sm">Re-Sedation</h4>
+                        <p class="text-xs text-purple-700 mt-1">Resume lighter sedation for closure</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Intraoperative Complications</h3>
+            <div class="space-y-3 mb-6">
+                <div class="bg-red-50 border border-red-100 rounded-xl p-4">
+                    <h4 class="font-semibold text-red-800 text-sm mb-2">Seizures</h4>
+                    <p class="text-xs text-red-700">First-line: Cold saline irrigation by surgeon. Second-line: Small propofol bolus (10-30 mg). Reserve benzodiazepines for refractory seizures.</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                    <h4 class="font-semibold text-amber-800 text-sm mb-2">Agitation/Anxiety</h4>
+                    <p class="text-xs text-amber-700">Verbal reassurance first. Small dexmedetomidine doses (0.1-0.2 mcg/kg) if needed. Consider termination if unmanageable.</p>
+                </div>
+            </div>
+
+            <div class="bg-teal-50 border-l-4 border-teal-500 rounded-r-lg p-4">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-teal-800 text-sm">Resident Tip</p>
+                        <p class="text-teal-700 text-sm mt-1">During the awake phase, maintain a calm demeanor and speak clearly. Your composure directly impacts patient cooperation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pituitary Section -->
+        <section id="pituitary" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">7</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Transsphenoidal Pituitary Surgery</h2>
+                    <p class="text-slate-500 text-sm mt-1">Endoscopic approach through the sphenoid sinus</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Endocrine Evaluation</h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Acromegaly</h4>
+                    <p class="text-xs text-slate-500">Difficult airway due to macroglossia and mandibular hypertrophy. Consider awake fiberoptic.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Cushing's Disease</h4>
+                    <p class="text-xs text-slate-500">Hypertension, hyperglycemia, difficult IV access.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Hypopituitarism</h4>
+                    <p class="text-xs text-slate-500">Need for stress-dose steroids (hydrocortisone 100 mg IV).</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h4 class="font-medium text-slate-800 text-sm mb-2">Diabetes Insipidus</h4>
+                    <p class="text-xs text-slate-500">Baseline fluid/electrolyte status. Monitor for postop DI.</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-red-800 text-sm">Critical Warning</p>
+                        <p class="text-red-700 text-sm mt-1"><strong>NO bag-mask ventilation post-extubation</strong> — risk of pneumocephalus due to base of skull surgical site.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Postoperative Endocrine Complications</h3>
+            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Condition</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Timing</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Treatment</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Diabetes Insipidus</td>
+                        <td class="px-4 py-3 text-slate-600">12-24 hours postop</td>
+                        <td class="px-4 py-3 text-slate-600">DDAVP, fluid replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">SIADH</td>
+                        <td class="px-4 py-3 text-slate-600">4-7 days postop</td>
+                        <td class="px-4 py-3 text-slate-600">Fluid restriction</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- LITT Section -->
+        <section id="litt" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">8</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">LITT (Laser Interstitial Thermal Therapy)</h2>
+                    <p class="text-slate-500 text-sm mt-1">MRI-guided thermal ablation using NeuroBlate system</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-100 rounded-xl p-6 mb-6">
+                <h3 class="text-lg font-semibold text-blue-900 mb-3">Unique Challenges</h3>
+                <div class="grid sm:grid-cols-3 gap-4 text-center">
+                    <div>
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                        </div>
+                        <p class="text-sm font-medium text-blue-900">OR ↔ MRI Transport</p>
+                    </div>
+                    <div>
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        </div>
+                        <p class="text-sm font-medium text-blue-900">MRI Safety</p>
+                    </div>
+                    <div>
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <p class="text-sm font-medium text-blue-900">Prolonged Duration</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">The "Seaweed Bundle" Setup</h3>
+            <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6">
+                <ul class="text-sm text-slate-600 space-y-2">
+                    <li>• Six microbore tubings in series</li>
+                    <li>• Total tubing volume ~10.2 mL</li>
+                    <li>• <strong>4-minute delay</strong> for medication changes</li>
+                    <li>• TIVA carrier at 150 mL/hr via pump</li>
+                </ul>
+            </div>
+
+            <div class="bg-teal-50 border-l-4 border-teal-500 rounded-r-lg p-4">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-teal-800 text-sm">Resident Tip</p>
+                        <p class="text-teal-700 text-sm mt-1">Tape microbore extensions securely to the floor or cover with blankets. Label them with red tags for visibility and to avoid trip hazards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DBS Section -->
+        <section id="dbs" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">9</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Deep Brain Stimulation (DBS)</h2>
+                    <p class="text-slate-500 text-sm mt-1">Electrode placement for movement disorders</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs bg-ucd-blue/10 text-ucd-blue px-3 py-1.5 rounded-full font-medium">Parkinson's Disease</span>
+                <span class="text-xs bg-ucd-blue/10 text-ucd-blue px-3 py-1.5 rounded-full font-medium">Essential Tremor</span>
+                <span class="text-xs bg-ucd-blue/10 text-ucd-blue px-3 py-1.5 rounded-full font-medium">Dystonia</span>
+                <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">OCD (emerging)</span>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-red-800 text-sm">MAO-I Interactions</p>
+                        <p class="text-red-700 text-sm mt-1">Screen for MAO-I medications — may cause hypertensive crisis with vasopressors. Discuss management with your attending.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Stage 1: Electrode Placement</h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-3">MAC Technique (Preferred)</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Midazolam 1-2 mg for headframe only</li>
+                        <li>• Propofol 25-50 mcg/kg/min</li>
+                        <li>• Dexmedetomidine 0.2-0.7 mcg/kg/hr</li>
+                        <li>• SBP &lt;130 mmHg</li>
+                        <li>• <strong>Pause sedation during macrostimulation</strong></li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-3">GA Technique (Alternative)</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Video laryngoscopy if headframe in place</li>
+                        <li>• Light TIVA for MER quality</li>
+                        <li>• Propofol 50-100 mcg/kg/min</li>
+                        <li>• Remifentanil 0.05-0.1 mcg/kg/min</li>
+                        <li>• Avoid volatile agents</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 text-white rounded-xl p-6">
+                <h4 class="font-semibold mb-3">Key Learning Points</h4>
+                <ol class="text-sm space-y-2 text-slate-300">
+                    <li>1. <strong>Medication Safety:</strong> Understand MAO-I interactions</li>
+                    <li>2. <strong>Airway Management:</strong> Master headframe intubation techniques</li>
+                    <li>3. <strong>Neuromonitoring:</strong> Optimize conditions for MER and macrostimulation</li>
+                    <li>4. <strong>Blood Pressure:</strong> Maintain SBP &lt;130 mmHg</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- RNS Section -->
+        <section id="rns" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">10</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Responsive Neurostimulation (RNS)</h2>
+                    <p class="text-slate-500 text-sm mt-1">Closed-loop system for refractory focal epilepsy</p>
+                </div>
+            </div>
+
+            <p class="text-slate-600 mb-6">RNS continuously monitors brain electrical activity and delivers stimulation when seizure patterns are detected. Primary indication: Medically refractory focal epilepsy with 1-2 well-localized foci not amenable to resection.</p>
+
+            <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-amber-800 text-sm">Seizure Precautions</p>
+                        <p class="text-amber-700 text-sm mt-1">Document detailed seizure history. Have propofol 10-30 mg and lorazepam 1-2 mg readily available. Highest seizure risk in first 24-48 hours post-implantation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VNS Section -->
+        <section id="vns" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">11</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">VNS Implantation</h2>
+                    <p class="text-slate-500 text-sm mt-1">Vagal nerve stimulator for refractory epilepsy</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-red-800 text-sm">Bradycardia Risk</p>
+                        <p class="text-red-700 text-sm mt-1">Left vagus nerve placement minimizes cardiac effects but bradycardia can occur during testing. Have atropine 0.5 mg or glycopyrrolate 0.2 mg drawn up and ready.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Key Considerations</h3>
+            <ul class="space-y-2 text-slate-600 mb-6">
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Secure ETT on the <strong>right side</strong> (away from surgical field)
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    TIVA preferred to minimize seizure risk
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Monitor for paratracheal hematoma postoperatively
+                </li>
+                <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-ucd-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Assess vocal cord function (hoarseness indicates damage)
+                </li>
+            </ul>
+        </section>
+
+        <!-- Cortical Mapping Section -->
+        <section id="cortical-mapping" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">12</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">IEA Recording & Cortical Mapping</h2>
+                    <p class="text-slate-500 text-sm mt-1">Interictal epileptiform activities and ECoG</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Anesthetic Agent Selection</h3>
+            <div class="overflow-x-auto border border-slate-200 rounded-xl mb-6">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Agent</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Effect on IEAs</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Recommendation</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Propofol</td>
+                        <td class="px-4 py-3 text-slate-600">Variable effect</td>
+                        <td class="px-4 py-3 text-slate-600">Stop/reduce 15-20 min before recording</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Dexmedetomidine</td>
+                        <td class="px-4 py-3 text-slate-600">Minimal at low doses</td>
+                        <td class="px-4 py-3 text-slate-600">0.3-0.5 mcg/kg/hr acceptable</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Sevoflurane</td>
+                        <td class="px-4 py-3 text-slate-600">Nonspecific spike activity</td>
+                        <td class="px-4 py-3 text-slate-600">Keep &lt;0.5 MAC if used</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Remifentanil</td>
+                        <td class="px-4 py-3 text-slate-600">Usually acceptable</td>
+                        <td class="px-4 py-3 text-slate-600">0.05-0.1 mcg/kg/min</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-teal-50 border-l-4 border-teal-500 rounded-r-lg p-4">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-teal-800 text-sm">Resident Tip</p>
+                        <p class="text-teal-700 text-sm mt-1">Inform the neurophysiologist about dosing changes at least 15 minutes before recording to account for context-sensitive half-time effects on EEG.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complex Spine Section -->
+        <section id="complex-spine" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">13</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Complex Spine Surgery</h2>
+                    <p class="text-slate-500 text-sm mt-1">Multilevel fusion, scoliosis correction, tumor resection</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Team Huddle Topics</h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">Blood Loss Planning</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Cell saver for EBL &gt;1000 mL</li>
+                        <li>• TXA: 10 mg/kg bolus → 1 mg/kg/hr</li>
+                        <li>• Type/screen vs. crossmatch</li>
+                        <li>• POC testing (TEG)</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-5">
+                    <h4 class="font-semibold text-slate-800 mb-2">Hemodynamic Goals</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• MAP ≥80-85 mmHg for cord manipulation</li>
+                        <li>• Permissive hypotension if needed</li>
+                        <li>• Phenylephrine or norepinephrine</li>
+                        <li>• Target Hgb 8-9 g/dL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Signal Loss Protocol</h3>
+            <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+                <ol class="text-sm text-red-800 space-y-2">
+                    <li>1. Notify attending and surgical team <strong>immediately</strong></li>
+                    <li>2. Increase MAP to ≥85-90 mmHg</li>
+                    <li>3. Check hemoglobin, oxygenation, electrolytes via ABG</li>
+                    <li>4. Verify normothermia</li>
+                    <li>5. Consider reducing anesthesia depth</li>
+                    <li>6. Rule out technical issues with neuromonitoring team</li>
+                </ol>
+            </div>
+
+            <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-amber-800 text-sm">Resident Tip</p>
+                        <p class="text-amber-700 text-sm mt-1">Set a timer to check the face hourly during prone cases. Document these checks in your anesthesia record.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spine ERAS Section -->
+        <section id="spine-eras" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">14</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Spine ERAS Protocol</h2>
+                    <p class="text-slate-500 text-sm mt-1">Enhanced Recovery After Surgery</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Preoperative Medications</h3>
+            <div class="overflow-x-auto border border-slate-200 rounded-xl mb-6">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Medication</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Dose</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Notes</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Gabapentin</td>
+                        <td class="px-4 py-3 text-slate-600">600 mg PO (&lt;65 yr) / 300 mg PO (≥65 yr)</td>
+                        <td class="px-4 py-3 text-slate-600">Age-adjusted dosing</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Acetaminophen</td>
+                        <td class="px-4 py-3 text-slate-600">1000 mg IV or PO</td>
+                        <td class="px-4 py-3 text-slate-600">Multimodal analgesia</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Celecoxib</td>
+                        <td class="px-4 py-3 text-slate-600">400 mg PO</td>
+                        <td class="px-4 py-3 text-slate-600">If no contraindications</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Ondansetron</td>
+                        <td class="px-4 py-3 text-slate-600">4 mg IV</td>
+                        <td class="px-4 py-3 text-slate-600">PONV prophylaxis</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-red-800 text-sm">Lidocaine Infusion Toxicity Signs</p>
+                        <p class="text-red-700 text-sm mt-1"><strong>Cardiac:</strong> Dysrhythmias. <strong>Neurological:</strong> Perioral numbness, tinnitus, visual disturbances. <strong>Severe:</strong> Seizures, altered consciousness. Discontinue immediately if suspected.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TBI Section -->
+        <section id="tbi" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">15</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Traumatic Brain Injury Management</h2>
+                    <p class="text-slate-500 text-sm mt-1">Preventing secondary brain injuries</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-red-50 to-orange-50 border border-red-100 rounded-xl p-6 mb-6">
+                <h3 class="text-lg font-semibold text-red-900 mb-3">Secondary Injury Prevention</h3>
+                <p class="text-sm text-red-800 mb-3">Avoid these insults:</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <span class="text-xs bg-white text-red-700 px-3 py-2 rounded-lg text-center font-medium">Hypotension</span>
+                    <span class="text-xs bg-white text-red-700 px-3 py-2 rounded-lg text-center font-medium">Hypoxemia</span>
+                    <span class="text-xs bg-white text-red-700 px-3 py-2 rounded-lg text-center font-medium">Hypercapnia</span>
+                    <span class="text-xs bg-white text-red-700 px-3 py-2 rounded-lg text-center font-medium">Hyperglycemia</span>
+                    <span class="text-xs bg-white text-red-700 px-3 py-2 rounded-lg text-center font-medium">Hyperthermia</span>
+                    <span class="text-xs bg-white text-red-700 px-3 py-2 rounded-lg text-center font-medium">Seizures</span>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Age-Based SBP Goals</h3>
+            <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                    <p class="text-xs text-slate-500 mb-1">Age 15-49</p>
+                    <p class="text-2xl font-bold text-ucd-blue">&gt;110 mmHg</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                    <p class="text-xs text-slate-500 mb-1">Age 50-69</p>
+                    <p class="text-2xl font-bold text-ucd-blue">&gt;100 mmHg</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                    <p class="text-xs text-slate-500 mb-1">Age &gt;70</p>
+                    <p class="text-2xl font-bold text-ucd-blue">&gt;110 mmHg</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Osmotherapy</h3>
+            <div class="overflow-x-auto border border-slate-200 rounded-xl mb-6">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Agent</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Dosing</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-700">Onset</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Mannitol</td>
+                        <td class="px-4 py-3 text-slate-600">0.25-1 g/kg IV</td>
+                        <td class="px-4 py-3 text-slate-600">15-30 min</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">3% Saline</td>
+                        <td class="px-4 py-3 text-slate-600">100-250 mL bolus</td>
+                        <td class="px-4 py-3 text-slate-600">5-10 min</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">23.4% Saline</td>
+                        <td class="px-4 py-3 text-slate-600">30 mL IV (central line only)</td>
+                        <td class="px-4 py-3 text-slate-600">5 min</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Transport MRI Section -->
+        <section id="transport-mri" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">16</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Transport & MRI Considerations</h2>
+                    <p class="text-slate-500 text-sm mt-1">Patient transport and MRI safety zones</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">MRI Safety Zones</h3>
+            <div class="grid sm:grid-cols-4 gap-3 mb-6">
+                <div class="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
+                    <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">I</div>
+                    <p class="text-xs font-medium text-green-800">General Public</p>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center">
+                    <div class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">II</div>
+                    <p class="text-xs font-medium text-yellow-800">Screening Area</p>
+                </div>
+                <div class="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
+                    <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">III</div>
+                    <p class="text-xs font-medium text-orange-800">Control Room</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <div class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">IV</div>
+                    <p class="text-xs font-medium text-red-800">Scanner Room</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4 mb-6">
+                <div class="flex gap-3">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-semibold text-red-800 text-sm">Critical Safety Rule</p>
+                        <p class="text-red-700 text-sm mt-1"><strong>When in doubt, assume item is NOT MRI-compatible.</strong> Never bring questionable items into Zone IV. Consult MRI safety officer if uncertain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appendices Section -->
+        <section id="appendices" class="content-section mb-16">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-ucd-blue to-ucd-teal text-white font-bold rounded-xl text-lg flex-shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-ucd-blue">Quick Reference</h2>
+                    <p class="text-slate-500 text-sm mt-1">Mnemonics and drug tables</p>
+                </div>
+            </div>
+
+            <!-- VAPID Mnemonic -->
+            <div class="bg-gradient-to-br from-ucd-blue to-ucd-teal rounded-xl p-6 text-white mb-6">
+                <p class="text-xs font-semibold uppercase tracking-wider text-white/70 mb-2">Anesthetic Effects on Brain</p>
+                <p class="text-2xl font-bold mb-4">"VAPID"</p>
+                <ul class="space-y-2 text-white/90 text-sm">
+                    <li><span class="font-bold">V</span>olatile agents: ↑CBF, ↓CMRO₂, ↑ICP</li>
+                    <li><span class="font-bold">A</span>nesthetics (IV): ↓CBF, ↓CMRO₂, ↓ICP</li>
+                    <li><span class="font-bold">P</span>rotection: Burst suppression on EEG</li>
+                    <li><span class="font-bold">I</span>ncreased ICP: Ketamine caution</li>
+                    <li><span class="font-bold">D</span>epress neuromonitoring: Volatile agents</li>
+                </ul>
+            </div>
+
+            <!-- HEADS Mnemonic -->
+            <div class="bg-gradient-to-br from-slate-700 to-slate-900 rounded-xl p-6 text-white mb-6">
+                <p class="text-xs font-semibold uppercase tracking-wider text-white/70 mb-2">Brain Protection</p>
+                <p class="text-2xl font-bold mb-4">"HEADS"</p>
+                <ul class="space-y-2 text-white/90 text-sm">
+                    <li><span class="font-bold">H</span>yperventilation (judicious use only)</li>
+                    <li><span class="font-bold">E</span>uvolemia (or slight hyperosmolarity)</li>
+                    <li><span class="font-bold">A</span>nesthetic management (reduce CMRO₂)</li>
+                    <li><span class="font-bold">D</span>rugs (mannitol, hypertonic saline)</li>
+                    <li><span class="font-bold">S</span>uppression (EEG burst suppression)</li>
+                </ul>
+            </div>
+
+            <!-- MACH Mnemonic -->
+            <div class="bg-gradient-to-br from-red-600 to-red-800 rounded-xl p-6 text-white">
+                <p class="text-xs font-semibold uppercase tracking-wider text-white/70 mb-2">Signs of VAE</p>
+                <p class="text-2xl font-bold mb-4">"MACH"</p>
+                <ul class="space-y-2 text-white/90 text-sm">
+                    <li><span class="font-bold">M</span>ill-wheel murmur</li>
+                    <li><span class="font-bold">A</span>ir aspiration from central line</li>
+                    <li><span class="font-bold">C</span>ardiovascular collapse</li>
+                    <li><span class="font-bold">H</span>ypoxia</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-8 mt-16">
+            <div class="text-center">
+                <p class="text-sm text-slate-500 mb-2">UC Davis Health · Department of Anesthesiology & Pain Medicine</p>
+                <p class="text-xs text-slate-400">Neuroanesthesiology Rotation Guide v3.0 · May 2025 · Editor: Brian Pitts, M.D.</p>
+            </div>
+        </footer>
+
+    </div>
+</main>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-ucd-blue text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all hover:bg-ucd-teal">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+</button>
+
+<!-- JavaScript -->
+<script src="js/app.js"></script>
 </body>
 </html>
