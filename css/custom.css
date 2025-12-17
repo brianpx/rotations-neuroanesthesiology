@@ -1,0 +1,78 @@
+/* Custom styles to extend Tailwind */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Search highlight animation */
+.search-highlight {
+    background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
+    padding: 0 2px;
+    border-radius: 2px;
+    animation: highlightPulse 0.5s ease;
+}
+
+@keyframes highlightPulse {
+    0% { background-color: #fde047; }
+    50% { background-color: #facc15; }
+    100% { background-color: #fef08a; }
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* TOC active indicator transition */
+.toc-item {
+    transition: all 0.2s ease;
+}
+
+/* Mobile sidebar overlay */
+.sidebar-overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Print styles */
+@media print {
+    .sidebar, .content-header, .mobile-header {
+        display: none !important;
+    }
+    .main-content {
+        margin-left: 0 !important;
+    }
+}
